@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django import *
-from .models  import person_coll
+ 
 from django.http import HttpResponse
 
 

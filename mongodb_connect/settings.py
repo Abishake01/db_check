@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gsdz4(r*8=bdgtqv@pd2@zid8x9=4yp6cczj8(f9g=9-9*1ig-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,24 +74,13 @@ WSGI_APPLICATION = 'mongodb_connect.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
- #   }
-#}
-
 DATABASES = {
-   'default': {
-       'ENGINE': 'djongo',
-       'CLIENT': {
-           
-           'host': "mongodb+srv://Abishake:wvgJ733ew6M9PPj6@cluster0.imiuj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-           'name':'mongodb',
-           'authMechanism': "SCRAM-SHA-1",
-        }
-   }
+    'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+ }
 }
+
 
 
 # Password validation
@@ -128,22 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-#STATIC_URL = 'static/'
-import os
-
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = (
-                        'static',
-                        'media',
-                   )
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
